@@ -76,7 +76,7 @@ export default {
 <style scoped>
     header{
         height: 120px;
-        background-color: #eee;
+        background-color: #fff;
     }
     .container{
         height: 100%;
@@ -109,8 +109,6 @@ export default {
        bottom: 0;
     }
     li a{
-        /* height: 100%; */
-        text-decoration: none;
         text-transform: uppercase;
         font-weight: 500;
         color: #000;

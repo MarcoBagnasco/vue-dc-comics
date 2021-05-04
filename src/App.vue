@@ -2,18 +2,23 @@
   <div id="app">
     <!-- HEADER -->
     <Header />
+
     <!-- MAIN -->
+    <Main />
+
     <!-- FOOTER -->
   </div>
 </template>
 
 <script>
 import Header from '@/components/Header.vue';
+import Main from '@/components/Main.vue';
 
 export default {
   name: 'App',
   components: {
     Header,
+    Main,
   }
 }
 </script>
@@ -28,10 +33,18 @@ export default {
 body{
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 14px;
+  color: #fff;
 }
+a{
+  text-decoration: none;
+}
+img{
+  max-width: 100%;
+}
+
 // UTILITIES
   .container{
-    max-width: 1200px;
+    max-width: 1270px;
     margin: 0 auto;
   }
   // Flex
