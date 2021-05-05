@@ -1,14 +1,14 @@
 <template>
-  <header>
-      <div class="container flex jc-between">
-          <img src="../assets/img/dc-logo.png" alt="" class="logo">
-          <nav>
-              <ul class="flex">
-                  <li v-for="(item, index) in navLinks" :key="index"   class="flex ai-center" :class="{active: item.current}"><a href="/">{{item.text}}</a></li>
-              </ul>
-          </nav>
-      </div>
-  </header>
+    <header>
+        <div class="container flex jc-between">
+            <img src="../assets/img/dc-logo.png" alt="" class="logo">
+            <nav>
+                <ul class="flex">
+                    <li v-for="(item, index) in navLinks" :key="index"   class="flex ai-center" :class="{active: item.current}"><a href="/">{{item.text}}</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 </template>
 
 <script>
