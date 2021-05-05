@@ -2,8 +2,18 @@
     <main>
         <!-- CONTENT SECT. -->
         <section class="content">
-            <div class="container flex ai-center">
-                <h2>--> Content goes here &lt;--</h2>
+            <div class="hero">
+                <img src="../assets/img/jumbotron.jpg" alt="hero">
+            </div>
+            <div class="series">
+                <div class="container flex">
+                    <Album
+                        v-for="(album, index) in albums"
+                        :key="index"
+                        :album="album"
+                    />
+                    <div class="btn-load">load more</div>
+                </div>
             </div>
         </section>
 
@@ -19,49 +29,67 @@
 </template>
 
 <script>
+import Album from '@/components/Album.vue';
+
+// Data
+import Comics from '@/data/dc-comics.js';
+import Tools from '@/data/tools.js';
+
 export default {
     name: 'Main',
+    components: {
+        Album,
+    },
     data() {
         return {
-            tools: [
-                {   
-                    image: require('../assets/img/buy-comics-digital-comics.png'),
-                    text: 'digital comics',
-                },
-                {   
-                    image: require('../assets/img/buy-comics-merchandise.png'),
-                    text: 'dc merchandise',
-                },
-                {   
-                    image: require('../assets/img/buy-comics-subscriptions.png'),
-                    text: 'subscription',
-                },
-                {   
-                    image: require('../assets/img/buy-comics-shop-locator.png'),
-                    text: 'comic shop locator',
-                },
-                {   
-                    image: require('../assets/img/buy-dc-power-visa.svg'),
-                    text: 'dc power visa',
-                },
-            ],
-        }
+            albums: Comics,
+            tools: Tools,
+        };
     }
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+    main{
+        text-transform: uppercase;
+    }
     .container{
         height: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
     }
-    h2{
-        font-size: 1.9em;
-    }
-    
     /* CONTENT SECT. */
     .content{
-        height: 130px;
-        background-color: #000;
+        // Hero
+        .hero{
+            height: 400px;
+            overflow: hidden;
+        }
+
+        // Series
+        .series{
+            position: relative;
+            padding-top: 55px;
+            padding-bottom: 20px;
+            background-color: #1c1c1c;
+            &::before{
+                content: 'current series';
+                position: absolute;
+                bottom: 100%;
+                left: 315px;
+                transform: translateY(50%);
+                padding: 9px 25px;
+                color: #fff;
+                font-size: 1.8rem;
+                font-weight: bold;
+                background-color: #0282f9;
+            }
+            .btn-load{
+                padding: 9px 60px;
+                font-weight: bold;
+                background-color: #0282f9;
+            }
+        }
     }
 
     /* TOOLS SECT. */
@@ -72,21 +100,20 @@ export default {
     li{
         list-style: none;
         margin: 0 35px;
-        text-transform: uppercase;
-    }
-    li:last-child{
-        margin-right: 0;
-    }
-    li a{
-        font-family: Arial, Helvetica, sans-serif;
-        color: #fff;
-    }
-    li img{
-        height: 55px;
-        margin-right: 12px;
-        vertical-align: middle;
-    }
-    li:last-child img{
-        width: 55px;
+        a{
+            font-family: Arial, Helvetica, sans-serif;
+            color: #fff;
+        }
+        img{
+            height: 55px;
+            margin-right: 12px;
+            vertical-align: middle;
+        }
+        &:last-child{
+            margin-right: 0;
+            img{
+                width: 55px;
+            }
+        }
     }
 </style>
