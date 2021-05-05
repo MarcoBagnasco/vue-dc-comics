@@ -25,7 +25,7 @@ export default {
                 {
                     text: 'comics',
                     url: '/comics',
-                    current: false,
+                    current: true,
                 },
                 {
                     text: 'movies',
