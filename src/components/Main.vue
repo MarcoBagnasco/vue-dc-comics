@@ -85,6 +85,7 @@ export default {
                 background-color: #0282f9;
             }
             .btn-load{
+                align-self: flex-start;
                 padding: 9px 60px;
                 font-weight: bold;
                 background-color: #0282f9;
